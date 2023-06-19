@@ -19,5 +19,6 @@ COPY maven.sh /etc/profile.d/
 
 RUN chmod +x /etc/profile.d/maven.sh
 
-COPY deploy.sh .
-CMD ["./deploy.sh"]
+SHELL ["/bin/bash", "-c"] 
+
+RUN source /etc/profile.d/maven.sh
